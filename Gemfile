@@ -6,4 +6,5 @@ group :test do
   gem "rake"
   gem "guard"
   gem "guard-minitest"
+  gem "simplecov"
 end
