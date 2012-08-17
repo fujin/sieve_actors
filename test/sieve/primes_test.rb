@@ -5,7 +5,7 @@ require 'sieve/primes'
 
 class TestPrimes < MiniTest::Unit::TestCase
   def bench_sieve_primes
-    assert_performance_linear 0.9977 do |n|
+    assert_performance_linear do |n|
       Sieve::Primes.new.take(n)[4,-1]
     end
   end
