@@ -1,3 +1,5 @@
+require 'celluloid'
+
 module Sieve
   # A model represents a fragment of the state of our sieve, specifically some subset
   # of the primes discovered so far.
