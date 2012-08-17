@@ -4,10 +4,6 @@ require 'prime'
 require 'sieve/primes'
 
 class TestPrimes < MiniTest::Unit::TestCase
-  def self.bench_range
-    [1_000, 10_000, 100_000, 1_000_000]
-  end
-
   def bench_sieve_primes
     assert_performance_linear 0.9977 do |n|
       Sieve::Primes.new.take(n)[4,-1]
