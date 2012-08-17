@@ -1,5 +1,6 @@
 require 'celluloid'
 require_relative "candidates"
+require_relative "model"
 
 module Sieve
   class Controller

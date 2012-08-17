@@ -2,7 +2,7 @@ require 'minitest/autorun'
 
 require 'sieve/model'
 
-class ModelTest < MiniTest::Unit::TestCase
+class TestModels < MiniTest::Unit::TestCase
 
   # Empty models shouldn't match anything
   def test_model_empty

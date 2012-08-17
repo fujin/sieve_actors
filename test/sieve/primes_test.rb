@@ -1,8 +1,18 @@
 require 'minitest/autorun'
+require 'minitest/benchmark'
 require 'prime'
 require 'sieve/primes'
 
-class PrimesTest < MiniTest::Unit::TestCase
+class TestPrimes < MiniTest::Unit::TestCase
+  def self.bench_range
+    [1_000, 10_000, 100_000, 1_000_000]
+  end
+
+  def bench_sieve_primes
+    assert_performance_linear 0.9977 do |n|
+      Sieve::Primes.new.take(n)[4,-1]
+    end
+  end
 
   # Verify that we can at least obtain the seeded values from the controller
   def test_controller_seeds_only

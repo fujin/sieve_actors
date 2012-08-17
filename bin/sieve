@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+# -*- mode: ruby -*-
+
+require 'rubygems'
+require 'bundler/setup'
+require_relative '../lib/sieve/primes'
+
+require 'benchmark'
+
+# require 'minitest/autorun'
+# require 'minitest/benchmark'
+
+input = ARGV.first.to_i
+
+primes = Sieve::Primes.new
+
+Benchmark.bm do |x|
+  x.report("#{input} primes (sieve):") { primes.take(input) }
+end
